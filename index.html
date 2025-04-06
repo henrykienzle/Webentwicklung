@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>🎮 Videogame Finder</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="overlay">
+    <div class="container">
+      <h1>🎮 Videogame Finder</h1>
+      <p>Finde das perfekte Spiel für dich</p>
+
+      <form class="search-form">
+        <select name="genre" required>
+          <option value="">Genre wählen</option>
+          <option value="action">Action</option>
+          <option value="adventure">Adventure</option>
+          <option value="rpg">Rollenspiel (RPG)</option>
+          <option value="shooter">Shooter</option>
+          <option value="simulation">Simulation</option>
+          <option value="strategy">Strategie</option>
+          <option value="sports">Sport</option>
+          <option value="racing">Rennspiel</option>
+          <option value="horror">Horror</option>
+          <option value="fighting">Prügelspiele (Fighting)</option>
+          <option value="puzzle">Puzzle</option>
+          <option value="rhythm">Rhythmus / Musik</option>
+          <option value="battle-royale">Battle Royale</option>
+        </select>
+
+        <select name="mode" required>
+          <option value="">Spielmodus wählen</option>
+          <option value="singleplayer">Einzelspieler (Offline)</option>
+          <option value="multiplayer">Mehrspieler (Online)</option>
+        </select>
+
+        <select name="platform" required>
+          <option value="">Plattform wählen</option>
+          <option value="pc">Computer</option>
+          <option value="ps5">PlayStation 5</option>
+          <option value="xbox">Xbox</option>
+        </select>
+
+        <button type="submit">🎮 Spiel finden</button>
+      </form>
+    </div>
+  </div>
+</body>
+</html>
+
