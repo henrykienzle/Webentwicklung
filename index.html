@@ -1,52 +1,64 @@
-<!DOCTYPE html>
-<html lang="de">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>🎮 Videogame Finder</title>
-  <link rel="stylesheet" href="style.css" />
-</head>
-<body>
-  <div class="overlay">
-    <div class="container">
-      <h1>🎮 Videogame Finder</h1>
-      <p>Finde das perfekte Spiel für dich</p>
+<!DOCTYPE html> <!-- Definiert das Dokument als HTML5 -->
+<html lang="de"> <!-- Beginnt das HTML-Dokument und legt die Sprache auf Deutsch fest -->
+<head> <!-- Kopfbereich des Dokuments -->
+  <meta charset="UTF-8" /> <!-- Zeichencodierung auf UTF-8 setzen -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" /> <!-- Für responsive Darstellung auf mobilen Geräten -->
+  <title>🎮 Videogame Finder 🎮</title> <!-- Titel der Webseite im Browser-Tab -->
+  <link rel="stylesheet" href="styles.css" /> <!-- Verlinkung zur externen CSS-Datei -->
+</head> <!-- Ende des Kopfbereichs -->
+<body> <!-- Beginn des sichtbaren Seiteninhalts -->
 
-      <form class="search-form">
-        <select name="genre" required>
-          <option value="">Genre wählen</option>
-          <option value="action">Action</option>
-          <option value="adventure">Adventure</option>
-          <option value="rpg">Rollenspiel (RPG)</option>
-          <option value="shooter">Shooter</option>
-          <option value="simulation">Simulation</option>
-          <option value="strategy">Strategie</option>
-          <option value="sports">Sport</option>
-          <option value="racing">Rennspiel</option>
-          <option value="horror">Horror</option>
-          <option value="fighting">Prügelspiele (Fighting)</option>
-          <option value="puzzle">Puzzle</option>
-          <option value="rhythm">Rhythmus / Musik</option>
-          <option value="battle-royale">Battle Royale</option>
-        </select>
+  <div class="overlay"> <!-- Overlay-Container mit halbtransparentem Hintergrund -->
+    <div class="container"> <!-- Inhaltlicher Hauptcontainer -->
 
-        <select name="mode" required>
-          <option value="">Spielmodus wählen</option>
-          <option value="singleplayer">Einzelspieler (Offline)</option>
-          <option value="multiplayer">Mehrspieler (Online)</option>
-        </select>
+      <h1>🎮 Videogame Finder 🎮</h1> <!-- Hauptüberschrift der Seite -->
+      <p>Finde das perfekte Spiel für dich</p> <!-- Untertitel oder Beschreibung -->
 
-        <select name="platform" required>
-          <option value="">Plattform wählen</option>
-          <option value="pc">Computer</option>
-          <option value="ps5">PlayStation 5</option>
-          <option value="xbox">Xbox</option>
-        </select>
+      <form class="search-form" action="#" method="GET"> <!-- Formular zur Spielsuche mit GET-Methode und keiner echten Zielseite -->
 
-        <button type="submit">🎮 Spiel finden</button>
-      </form>
-    </div>
-  </div>
-</body>
-</html>
+        <select id="genre" name="genre" required> <!-- Dropdown für Genre-Auswahl (Pflichtfeld) -->
+          <option value="">Genre wählen</option> <!-- Platzhalteroption -->
+          <option value="action">Action</option> <!-- Action-Genre -->
+          <option value="adventure">Adventure</option> <!-- Adventure-Genre -->
+          <option value="shooter">Shooter</option> <!-- Shooter-Genre -->
+          <option value="simulation">Simulation</option> <!-- Simulations-Genre -->
+          <option value="strategy">Strategie</option> <!-- Strategie-Genre -->
+          <option value="sports">Sport</option> <!-- Sport-Genre -->
+          <option value="racing">Rennspiel</option> <!-- Rennspiel-Genre -->
+          <option value="horror">Horror</option> <!-- Horror-Genre -->
+          <option value="fighting">Prügelspiele</option> <!-- Fighting-Genre -->
+          <option value="puzzle">Puzzle</option> <!-- Puzzle-Genre -->
+          <option value="rhythm">Rhythmus / Musik</option> <!-- Musikspiele -->
+          <option value="battle-royale">Battle Royale</option> <!-- Battle Royale-Genre -->
+        </select> <!-- Ende Genre-Auswahl -->
+
+        <select id="mode" name="mode" required> <!-- Dropdown für Spielmodus-Auswahl (Pflichtfeld) -->
+          <option value="">Spielmodus wählen</option> <!-- Platzhalteroption -->
+          <option value="singleplayer">Einzelspieler</option> <!-- Einzelspieler-Modus -->
+          <option value="multiplayer">Mehrspieler</option> <!-- Mehrspieler-Modus -->
+        </select> <!-- Ende Spielmodus-Auswahl -->
+
+        <select id="platform" name="platform" required> <!-- Dropdown für Plattform-Auswahl (Pflichtfeld) -->
+          <option value="">Plattform wählen</option> <!-- Platzhalteroption -->
+          <option value="pc">PC</option> <!-- PC-Plattform -->
+          <option value="ps5">PlayStation 5</option> <!-- PS5-Plattform -->
+          <option value="xbox">Xbox</option> <!-- Xbox-Plattform -->
+        </select> <!-- Ende Plattform-Auswahl -->
+
+        <button type="submit">🎮 Spiel finden</button> <!-- Button zum Absenden des Formulars -->
+      </form> <!-- Ende des Formulars -->
+
+    <footer class="footer"> <!-- Footer-Bereich der Seite -->
+        <div class="footer-content"> <!-- Container für Footer-Inhalt -->
+            <div class="footer-section links"> <!-- Footer-Sektion mit Links -->
+            <a href="index.html">Home</a> <!-- Link zur Startseite -->
+            <a href="ueber-uns.html">Über uns</a> <!-- Link zur "Über uns"-Seite -->
+            <a href="kontakt.html">Kontakt</a> <!-- Link zur Kontakt-Seite -->
+            <a href="impressum.html">Impressum</a> <!-- Link zur Impressum-Seite -->
+            </div> <!-- Ende der Link-Sektion -->
+        </div> <!-- Ende Footer-Inhalt -->
+    </footer> <!-- Ende des Footers -->
+
+    </body> <!-- Ende des sichtbaren Seiteninhalts -->
+</html> <!-- Ende des HTML-Dokuments -->
 

@@ -1,97 +1,169 @@
 * {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-  }
-  
-  body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-image: url('https://images.app.goo.gl/hnFj3GE4PzNEAguU7'); 
-    background-size: cover;
-    background-position: center;
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: relative;
-  }
-  
-  .overlay {
-    background: rgba(0, 0, 0, 0.85);
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 2rem;
-  }
-  
-  .container {
-    background: #111;
-    color: white;
-    padding: 3rem 2rem;
-    border-radius: 1.5rem;
-    box-shadow: 0 0 30px #0ff;
-    text-align: center;
-    max-width: 600px;
-    width: 100%;
-    animation: fadeIn 1.5s ease;
-  }
-  
-  @keyframes fadeIn {
-    from { opacity: 0; transform: scale(0.95); }
-    to { opacity: 1; transform: scale(1); }
-  }
-  
-  h1 {
-    font-size: 3rem;
-    margin-bottom: 0.5rem;
-    color: #00ffff;
-    text-shadow: 0 0 10px #0ff;
-  }
-  
-  p {
-    font-size: 1.2rem;
-    margin-bottom: 2rem;
-    color: #ccc;
-  }
-  
-  .search-form {
-    display: flex;
-    flex-direction: column; /* Verändert das Layout, um die Felder untereinander zu zeigen */
-    gap: 1.5rem; /* Abstand zwischen den Feldern */
-  }
-  
-  .search-form select {
-    width: 100%;
-    padding: 1.5rem;
-    border: none;
-    border-radius: 0.8rem;
-    font-size: 1.2rem;
-    background: #222;
-    color: #0ff;
-    box-shadow: 0 0 10px #0ff5;
-  }
-  
-  .search-form button {
-    width: 100%;
-    padding: 1.5rem;
-    font-size: 1.3rem;
-    background: linear-gradient(90deg, #0ff, #00f2ff);
-    color: #000;
-    font-weight: bold;
-    border: none;
-    border-radius: 0.8rem;
-    cursor: pointer;
-    box-shadow: 0 0 20px #00ffff;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-  }
-  
-  .search-form button:hover {
-    transform: scale(1.05);
-    box-shadow: 0 0 30px #0ff;
-  }
-  
-  
-  
+  box-sizing: border-box; /* Sorgt dafür, dass Padding und Border in der Breite/Höhe enthalten sind */
+  margin: 0; /* Entfernt Standard-Außenabstände aller Elemente */
+  padding: 0; /* Entfernt Standard-Innenabstände aller Elemente */
+}
+
+body {
+  font-family: Helvetica, sans-serif; /* Setzt die Schriftart */
+  text-align: center; /* Zentriert Text im Body */
+  display: flex; /* Verwendet Flexbox für das Layout */
+  flex-direction: column; /* Elemente werden untereinander angeordnet */
+  align-items: center; /* Zentriert die Elemente horizontal */
+  justify-content: center; /* Zentriert die Elemente vertikal */
+  background-image: url('https://djmmtgamechangerdoc.wordpress.com/wp-content/uploads/2019/07/console-controllers-history.jpg?w=2000'); /* Hintergrundbild */
+  background-size: cover; /* Bild füllt den Hintergrund vollständig aus */
+  background-position: center; /* Zentriert das Hintergrundbild */
+  height: 100vh; /* Höhe entspricht der gesamten sichtbaren Fensterhöhe */
+  position: relative; /* Ermöglicht Positionierung von Kindern absolut relativ zum Body */
+}
+
+.overlay {
+  background: rgba(0, 0, 0, 0.75); /* Schwarzer halbtransparenter Overlay */
+  width: 100%; /* Volle Breite */
+  height: 100%; /* Volle Höhe */
+  position: absolute; /* Absolut positioniert über dem Body */
+  display: flex; /* Flexbox zur Zentrierung von Inhalten */
+  justify-content: center; /* Zentriert horizontal */
+  align-items: center; /* Zentriert vertikal */
+  padding: 2rem; /* Innenabstand rundherum */
+}
+
+.container {
+  background: #111; /* Dunkler Hintergrund */
+  color: rgb(255, 255, 255); /* Textfarbe weiß */
+  padding: 3rem 2rem; /* Oben/unten 3rem, seitlich 2rem Abstand */
+  border-radius: 1.5rem; /* Abgerundete Ecken */
+  box-shadow: 0 0 30px #0ff; /* Neon-artiger Schatten */
+  text-align: center; /* Textzentrierung */
+  max-width: 600px; /* Maximale Breite */
+  width: 100%; /* Volle Breite innerhalb der Begrenzung */
+  animation: fadeIn 1.5s ease; /* Einblendeffekt */
+  position: relative; /* Ermöglicht z-index */
+  z-index: 2; /* Über der Overlay-Ebene */
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: scale(0.95); } /* Startzustand – leicht verkleinert und transparent */
+  to { opacity: 1; transform: scale(1); } /* Endzustand – volle Sichtbarkeit */
+}
+
+h1 {
+  font-size: 2.5rem; /* Große Schriftgröße */
+  margin-bottom: 1rem; /* Abstand nach unten */
+  color: #00ffff; /* Neonblau */
+  text-shadow: 0 0 15px #0ff; /* Leuchtender Schatten für Text */
+}
+
+p {
+  font-size: 1.2rem; /* Etwas größere Standard-Schrift */
+  margin-bottom: 2rem; /* Abstand nach unten */
+  color: #ccc; /* Helles Grau für den Text */
+}
+
+.search-form {
+  display: flex; /* Flexbox */
+  flex-direction: column; /* Untereinander anordnen */
+  gap: 1.5rem; /* Abstand zwischen Elementen */
+  width: 100%; /* Volle Breite */
+}
+
+.search-form select {
+  width: 100%; /* Volle Breite */
+  padding: 1.5rem; /* Innenabstand */
+  border: none; /* Kein Rand */
+  border-radius: 0.8rem; /* Abgerundete Ecken */
+  font-size: 1.2rem; /* Schriftgröße */
+  background: #222; /* Dunkler Hintergrund */
+  color: #0ff; /* Neonblauer Text */
+  box-shadow: 0 0 15px #0ff5; /* Weicher Schein */
+  transition: box-shadow 0.3s ease; /* Übergang bei Fokus */
+}
+
+.search-form select:focus {
+  box-shadow: 0 0 25px #0ff; /* Stärker leuchtender Schatten bei Fokus */
+}
+
+.search-form button {
+  width: 100%; /* Volle Breite */
+  padding: 1.5rem; /* Innenabstand */
+  font-size: 1.3rem; /* Größere Schrift */
+  background: linear-gradient(90deg, #0ff, #00f2ff); /* Farbverlauf von Neonblau zu Türkis */
+  color: #000; /* Schwarzer Text */
+  font-weight: bold; /* Fettschrift */
+  border: none; /* Kein Rand */
+  border-radius: 0.8rem; /* Abgerundete Ecken */
+  cursor: pointer; /* Zeigt Hand beim Hover */
+  box-shadow: 0 0 20px #00ffff; /* Leuchtender Schatten */
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Sanfte Übergänge bei Hover */
+}
+
+.search-form button:hover {
+  transform: scale(1.05); /* Vergrößerung beim Hover */
+  box-shadow: 0 0 30px #0ff; /* Stärkerer Leuchteffekt */
+}
+
+.footer {
+  background: rgba(0, 0, 0, 0.85); /* Dunkler halbtransparenter Hintergrund */
+  color: #ffffff; /* Helles Grau für Text */
+  padding: 2rem; /* Innenabstand */
+  text-align: center; /* Zentrierter Text */
+  margin-top: 3rem; /* Abstand nach oben */
+  box-shadow: 0 -2px 10px #0ff3; /* Leuchtender Schatten nach oben */
+}
+
+.footer-links {
+  display: flex; /* Flexbox */
+  justify-content: center; /* Zentrierte Links */
+  gap: 2rem; /* Abstand zwischen Links */
+  margin-bottom: 1rem; /* Abstand zum unteren Teil */
+}
+
+.footer-links button {
+  background: none; /* Kein Hintergrund */
+  border: none; /* Kein Rand */
+  color: #0ff; /* Neonblauer Text */
+  font-size: 1rem; /* Standardgröße */
+  cursor: pointer; /* Hand-Cursor */
+  padding: 0.5rem 1rem; /* Innenabstand */
+  transition: color 0.3s ease; /* Farbwechsel bei Hover */
+}
+
+.footer-links button:hover {
+  color: #ffffff; /* Weißer Text beim Hover */
+  text-shadow: 0 0 5px #0ff; /* Leuchtender Text beim Hover */
+}
+
+.footer-info {
+  display: none; /* Standardmäßig versteckt */
+  color: #ffffff; /* Helles Grau */
+  margin-top: 1rem; /* Abstand nach oben */
+  font-size: 0.95rem; /* Etwas kleinere Schrift */
+}
+
+.footer-info.active {
+  display: block; /* Anzeigen, wenn aktiv (z. B. per JS ein- oder ausgeblendet) */
+}
+
+.footer-info a {
+  color: #0ff; /* Neonblauer Link */
+  text-decoration: none; /* Keine Unterstreichung */
+}
+
+.footer-info a:hover {
+  text-decoration: underline; /* Unterstrichen beim Hover */
+}
+
+.footer-info p {
+  margin: 1rem 0; /* Abstand oben und unten */
+}
+
+.footer-info#home p {
+  font-size: 1.1rem; /* Etwas größere Schrift für Home-Text */
+}
+
+.footer-info#about p,
+.footer-info#contact p,
+.footer-info#impressum p {
+  font-size: 1rem; /* Einheitliche Größe für weitere Absätze */
+}
