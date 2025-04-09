@@ -14,13 +14,6 @@ Screenshots und Videos des Spiels
 Preis und Bewertungen
 Link zur offiziellen Website oder Shop
 
-Bewertungssystem:
-Bewertungen und Kommentare von Nutzern
-Möglichkeit, eigene Bewertungen zu hinterlassen
-
-Favoritenliste:
-Spiele speichern, um sie später wiederzufinden und zu vergleichen
-
 Inhalte und Unterseiten:
 
 Startseite:
@@ -38,9 +31,6 @@ Screenshots und Videos
 Bewertungen und Kommentare anderer Nutzer
 Möglichkeit, das Spiel zur Favoritenliste hinzuzufügen
 
-Favoritenliste:
-Gespeicherte Spiele anzeigen
-Möglichkeit, Einträge aus der Liste zu entfernen
 
 Datenverwaltung:
 
