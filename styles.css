@@ -167,3 +167,43 @@ p {
 .footer-info#impressum p {
   font-size: 1rem; /* Einheitliche Größe für weitere Absätze */
 }
+
+#wishlist {
+  position: fixed;
+  top: 100px;
+  right: 20px;
+  background-color: rgba(255, 255, 255, 0.1);
+  border: 2px solid #fff;
+  border-radius: 10px;
+  padding: 20px;
+  width: 250px;
+  max-height: 70vh;
+  overflow-y: auto;
+  color: #fff;
+}
+
+#wishlist h2 {
+  margin-top: 0;
+  font-size: 1.2em;
+}
+
+#wishlist ul {
+  list-style: none;
+  padding: 0;
+}
+
+#wishlist li {
+  margin: 5px 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#wishlist button {
+  background-color: rgb(255, 255, 255);
+  color: white;
+  border: none;
+  padding: 3px 6px;
+  cursor: pointer;
+  border-radius: 5px;
+}
