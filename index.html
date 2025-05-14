@@ -1,145 +1,76 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>🎮 Videogame Finder 🎮</title>
-  <link rel="stylesheet" href="styles.css"/>
-  <style>
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      background: linear-gradient(to right, #141e30, #243b55);
-      color: #fff;
-    }
-
-    .container-wrapper {
-      display: flex;
-      padding: 20px;
-    }
-
-    .container {
-      background-color: rgba(0, 0, 0, 0.6);
-      padding: 30px;
-      border-radius: 10px;
-      flex: 1;
-    }
-
-    #wishlist {
-      width: 300px;
-      margin-left: 20px;
-      background-color: rgba(0, 0, 0, 0.4);
-      padding: 20px;
-      border-radius: 10px;
-    }
-
-    #wishlist h2 {
-      margin-top: 0;
-    }
-
-    #wishlist ul {
-      list-style: none;
-      padding: 0;
-    }
-
-    #wishlist li {
-      margin-bottom: 10px;
-    }
-
-    .search-form select, .search-form button {
-      display: block;
-      margin: 10px 0;
-      padding: 10px;
-      width: 100%;
-      border-radius: 5px;
-      border: none;
-    }
-
-    footer {
-      background-color: #111;
-      color: #fff;
-      text-align: center;
-      padding: 20px;
-      position: fixed;
-      bottom: 0;
-      width: 100%;
-    }
-
-    footer a {
-      color: #fff;
-      margin: 0 10px;
-      text-decoration: none;
-    }
-
-    footer a:hover {
-      text-decoration: underline;
-    }
-  </style>
+  <meta charset="UTF-8" /> <!-- Definiert die Zeichencodierung als UTF-8 -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/> <!-- Stellt sicher, dass die Seite für Mobilgeräte optimiert ist -->
+  <title>🎮 Videogame Finder 🎮</title> <!-- Setzt den Titel der Seite -->
+  <link rel="stylesheet" href="styles.css"/> <!-- Verlinkt die externe CSS-Datei für das Styling der Seite -->
 </head>
 <body>
 
-  <div class="container-wrapper">
+  <div class="container-wrapper"> <!-- Container für den gesamten Inhalt -->
     <!-- Hauptbereich -->
-    <div class="container">
-      <h1>🎮 Videogame Finder 🎮</h1>
-      <p>Finde das perfekte Spiel für dich</p>
-
-      <form class="search-form" action="#" method="GET">
+    <div class="container"> <!-- Container für den Hauptinhalt -->
+      <h1>🎮 Videogame Finder 🎮</h1> <!-- Überschrift der Seite -->
+      <p>Finde das perfekte Spiel für dich</p> <!-- Beschreibungstext -->
+      
+      <form class="search-form" action="#" method="GET"> <!-- Formular für die Spiele-Suche -->
         <!-- Genre Auswahl -->
-        <select id="genre" name="genre" required>
-          <option value="">Genre wählen</option>
-          <option value="action">Action</option>
-          <option value="adventure">Adventure</option>
-          <option value="shooter">Shooter</option>
-          <option value="simulation">Simulation</option>
-          <option value="strategy">Strategie</option>
-          <option value="sports">Sport</option>
+        <select id="genre" name="genre" required> <!-- Dropdown für die Genre-Auswahl -->
+          <option value="">Genre wählen</option> <!-- Standardoption -->
+          <option value="action">Action</option> <!-- Option für Action-Genre -->
+          <option value="adventure">Adventure</option> <!-- Option für Adventure-Genre -->
+          <option value="shooter">Shooter</option> <!-- Option für Shooter-Genre -->
+          <option value="simulation">Simulation</option> <!-- Option für Simulation-Genre -->
+          <option value="strategy">Strategie</option> <!-- Option für Strategie-Genre -->
+          <option value="sports">Sport</option> <!-- Option für Sport-Genre -->
         </select>
 
         <!-- Spielmodus Auswahl -->
-        <select id="mode" name="mode" required>
-          <option value="">Spielmodus wählen</option>
-          <option value="singleplayer">Einzelspieler</option>
-          <option value="multiplayer">Mehrspieler</option>
+        <select id="mode" name="mode" required> <!-- Dropdown für die Spielmodus-Auswahl -->
+          <option value="">Spielmodus wählen</option> <!-- Standardoption -->
+          <option value="singleplayer">Einzelspieler</option> <!-- Option für Einzelspieler-Modus -->
+          <option value="multiplayer">Mehrspieler</option> <!-- Option für Mehrspieler-Modus -->
         </select>
 
         <!-- Plattform Auswahl -->
-        <select id="platform" name="platform" required>
-          <option value="">Plattform wählen</option>
-          <option value="pc">PC</option>
-          <option value="ps5">PlayStation 5</option>
-          <option value="xbox">Xbox</option>
+        <select id="platform" name="platform" required> <!-- Dropdown für die Plattform-Auswahl -->
+          <option value="">Plattform wählen</option> <!-- Standardoption -->
+          <option value="pc">PC</option> <!-- Option für PC -->
+          <option value="ps5">PlayStation 5</option> <!-- Option für PlayStation 5 -->
+          <option value="xbox">Xbox</option> <!-- Option für Xbox -->
         </select>
 
-        <button type="submit">🎮 Spiel finden</button>
+        <button type="submit">🎮 Spiel finden</button> <!-- Button zum Absenden des Formulars -->
       </form>
 
       <!-- Empfehlung -->
-      <div id="recommendation" style="margin-top: 20px;"></div>
+      <div id="recommendation" style="margin-top: 20px;"></div> <!-- Bereich für die Spiel-Empfehlung -->
     </div>
 
     <!-- Merkliste -->
-    <div id="wishlist">
-      <h2>📝 Deine Merkliste</h2>
-      <ul id="wishlistItems"></ul>
+    <div id="wishlist"> <!-- Container für die Merkliste -->
+      <h2>📝 Deine Merkliste</h2> <!-- Titel der Merkliste -->
+      <ul id="wishlistItems"></ul> <!-- Liste der hinzugefügten Spiele -->
     </div>
   </div>
 
   <!-- Footer -->
   <footer>
-    <a href="index.html">Home</a>
-    <a href="ueber-uns.html">Über uns</a>
-    <a href="kontakt.html">Kontakt</a>
-    <a href="impressum.html">Impressum</a>
+    <a href="index.html">Home</a> <!-- Link zur Startseite -->
+    <a href="ueber-uns.html">Über uns</a> <!-- Link zur "Über uns"-Seite -->
+    <a href="kontakt.html">Kontakt</a> <!-- Link zur Kontaktseite -->
+    <a href="impressum.html">Impressum</a> <!-- Link zur Impressum-Seite -->
   </footer>
 
   <!-- JavaScript -->
   <script>
-    document.addEventListener("DOMContentLoaded", function () {
-      const form = document.querySelector(".search-form");
-      const recommendationDiv = document.getElementById("recommendation");
-      const wishlistItems = document.getElementById("wishlistItems");
+    document.addEventListener("DOMContentLoaded", function () { // Event-Listener, der beim Laden der Seite ausgelöst wird
+      const form = document.querySelector(".search-form"); // Holt das Formular-Element
+      const recommendationDiv = document.getElementById("recommendation"); // Holt das Div für die Empfehlung
+      const wishlistItems = document.getElementById("wishlistItems"); // Holt das Element für die Merkliste
 
+      // Definiert die Spiel-Datenbank mit verschiedenen Genres, Modi und Plattformen
       const gameDatabase = {
         action: {
           singleplayer: { pc: "God of War", ps5: "Spider-Man: Miles Morales", xbox: "Halo Infinite" },
@@ -167,57 +98,64 @@
         }
       };
 
-      let wishlist = [];
+      // Lade die Merkliste aus dem localStorage, falls vorhanden
+      let wishlist = JSON.parse(localStorage.getItem("wishlist")) || []; // Wenn keine Merkliste vorhanden ist, wird ein leeres Array verwendet
 
-      function updateWishlist() {
-        wishlistItems.innerHTML = "";
-        wishlist.forEach((game, index) => {
-          const li = document.createElement("li");
-          li.textContent = game;
-          const removeBtn = document.createElement("button");
-          removeBtn.textContent = "❌";
-          removeBtn.style.marginLeft = "10px";
-          removeBtn.onclick = () => {
-            wishlist.splice(index, 1);
-            updateWishlist();
+      function updateWishlist() { // Funktion zur Aktualisierung der Merkliste
+        wishlistItems.innerHTML = ""; // Löscht die bestehende Liste der Merkliste
+        wishlist.forEach((game, index) => { // Geht jedes Spiel in der Merkliste durch
+          const li = document.createElement("li"); // Erstellt ein neues Listenelement
+          li.textContent = game; // Setzt den Text des Listenelements auf den Namen des Spiels
+          const removeBtn = document.createElement("button"); // Erstellt einen Button zum Entfernen des Spiels
+          removeBtn.textContent = "❌"; // Setzt den Text des Buttons auf "❌"
+          removeBtn.style.marginLeft = "10px"; // Fügt einen linken Rand hinzu, um den Button vom Text zu trennen
+          removeBtn.onclick = () => { // Wenn der Button geklickt wird
+            wishlist.splice(index, 1); // Entfernt das Spiel aus der Merkliste
+            updateWishlist(); // Aktualisiert die Anzeige der Merkliste
           };
-          li.appendChild(removeBtn);
-          wishlistItems.appendChild(li);
+          li.appendChild(removeBtn); // Fügt den Button dem Listenelement hinzu
+          wishlistItems.appendChild(li); // Fügt das Listenelement der Merkliste hinzu
         });
+
+        // Speichere die aktualisierte Merkliste im localStorage
+        localStorage.setItem("wishlist", JSON.stringify(wishlist)); // Speichert die Merkliste als JSON im localStorage
       }
 
-      form.addEventListener("submit", function (event) {
-        event.preventDefault();
+      form.addEventListener("submit", function (event) { // Event-Listener für das Absenden des Formulars
+        event.preventDefault(); // Verhindert das standardmäßige Absenden des Formulars
 
-        const genre = document.getElementById("genre").value;
-        const mode = document.getElementById("mode").value;
-        const platform = document.getElementById("platform").value;
+        const genre = document.getElementById("genre").value; // Holt den ausgewählten Genre-Wert
+        const mode = document.getElementById("mode").value; // Holt den ausgewählten Spielmodus
+        const platform = document.getElementById("platform").value; // Holt die ausgewählte Plattform
 
-        if (genre && mode && platform) {
-          const game = gameDatabase?.[genre]?.[mode]?.[platform];
+        if (genre && mode && platform) { // Wenn alle Felder ausgefüllt sind
+          const game = gameDatabase?.[genre]?.[mode]?.[platform]; // Holt das Spiel aus der Datenbank basierend auf den Auswahlwerten
 
-          if (game) {
+          if (game) { // Wenn ein Spiel gefunden wurde
             recommendationDiv.innerHTML = `
               <p>🎮 <strong>Empfehlung:</strong> ${game}</p>
               <button id="addToWishlistBtn">💾 Zur Merkliste hinzufügen</button>
-            `;
+            `; // Zeigt die Spiel-Empfehlung und einen Button zum Hinzufügen zur Merkliste an
 
-            document.getElementById("addToWishlistBtn").addEventListener("click", function () {
-              if (!wishlist.includes(game)) {
-                wishlist.push(game);
-                updateWishlist();
+            document.getElementById("addToWishlistBtn").addEventListener("click", function () { // Event-Listener für den Button "Zur Merkliste hinzufügen"
+              if (!wishlist.includes(game)) { // Wenn das Spiel noch nicht in der Merkliste ist
+                wishlist.push(game); // Füge das Spiel zur Merkliste hinzu
+                updateWishlist(); // Aktualisiere die Anzeige der Merkliste
               } else {
-                alert("Dieses Spiel ist bereits in deiner Merkliste!");
+                alert("Dieses Spiel ist bereits in deiner Merkliste!"); // Zeige eine Warnung, wenn das Spiel bereits in der Merkliste ist
               }
             });
 
           } else {
-            recommendationDiv.innerHTML = "<p>❌ Leider keine Empfehlung für diese Auswahl.</p>";
+            recommendationDiv.innerHTML = "<p>❌ Leider keine Empfehlung für diese Auswahl.</p>"; // Wenn kein Spiel gefunden wurde, zeige eine Fehlermeldung an
           }
         } else {
-          alert("Bitte wähle Genre, Spielmodus und Plattform aus.");
+          alert("Bitte wähle Genre, Spielmodus und Plattform aus."); // Wenn nicht alle Felder ausgefüllt sind, zeige eine Warnung an
         }
       });
+
+      // Aktualisiere die Merkliste beim Laden der Seite
+      updateWishlist(); // Lädt die Merkliste beim Laden der Seite und zeigt sie an
     });
   </script>
 </body>

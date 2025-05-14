@@ -1,209 +1,193 @@
+/* Globales Reset und Box-Modell */
 * {
-  box-sizing: border-box; /* Sorgt dafür, dass Padding und Border in der Breite/Höhe enthalten sind */
-  margin: 0; /* Entfernt Standard-Außenabstände aller Elemente */
-  padding: 0; /* Entfernt Standard-Innenabstände aller Elemente */
+  box-sizing: border-box; /* Padding und Border sind in der Breite/Höhe enthalten */
+  margin: 0;              /* Entfernt Standard-Außenabstand */
+  padding: 0;             /* Entfernt Standard-Innenabstand */
 }
 
+/* Grundlegende Body-Einstellungen */
 body {
-  font-family: Helvetica, sans-serif; /* Setzt die Schriftart */
-  text-align: center; /* Zentriert Text im Body */
-  display: flex; /* Verwendet Flexbox für das Layout */
-  flex-direction: column; /* Elemente werden untereinander angeordnet */
-  align-items: center; /* Zentriert die Elemente horizontal */
-  justify-content: center; /* Zentriert die Elemente vertikal */
+  margin: 0; /* Kein Außenabstand */
+  font-family: Helvetica, Arial, sans-serif; /* Schriftarten-Fallback */
+  text-align: center; /* Text zentrieren */
+  display: flex; /* Flexbox-Layout */
+  flex-direction: column; /* Elemente untereinander anordnen */
+  align-items: center; /* Horizontal zentrieren */
+  justify-content: center; /* Vertikal zentrieren */
   background-image: url('https://djmmtgamechangerdoc.wordpress.com/wp-content/uploads/2019/07/console-controllers-history.jpg?w=2000'); /* Hintergrundbild */
-  background-size: cover; /* Bild füllt den Hintergrund vollständig aus */
-  background-position: center; /* Zentriert das Hintergrundbild */
-  height: 100vh; /* Höhe entspricht der gesamten sichtbaren Fensterhöhe */
-  position: relative; /* Ermöglicht Positionierung von Kindern absolut relativ zum Body */
+  background-size: cover; /* Hintergrund vollständig abdecken */
+  background-position: center; /* Bild zentrieren */
+  height: 100vh; /* Höhe des sichtbaren Bereichs */
+  position: relative; /* Ermöglicht absolut positionierte Kind-Elemente */
+  color: #ffffff; /* Standard-Schriftfarbe */
 }
 
+/* Overlay über dem Hintergrund */
 .overlay {
-  background: rgba(0, 0, 0, 0.75); /* Schwarzer halbtransparenter Overlay */
+  background: rgba(0, 0, 0, 0.75); /* Halbtransparenter schwarzer Layer */
   width: 100%; /* Volle Breite */
   height: 100%; /* Volle Höhe */
-  position: absolute; /* Absolut positioniert über dem Body */
-  display: flex; /* Flexbox zur Zentrierung von Inhalten */
-  justify-content: center; /* Zentriert horizontal */
-  align-items: center; /* Zentriert vertikal */
-  padding: 2rem; /* Innenabstand rundherum */
+  position: absolute; /* Absolut positioniert im Body */
+  display: flex; /* Flexbox zur Zentrierung */
+  justify-content: center; /* Horizontal zentriert */
+  align-items: center; /* Vertikal zentriert */
+  padding: 2rem; /* Innenabstand */
 }
 
+/* Hauptcontainer */
 .container {
-  background: #111; /* Dunkler Hintergrund */
-  color: rgb(255, 255, 255); /* Textfarbe weiß */
-  padding: 3rem 2rem; /* Oben/unten 3rem, seitlich 2rem Abstand */
+  background: rgba(0, 0, 0, 0.6); /* Halbtransparenter dunkler Hintergrund */
+  color: #fff; /* Weiße Schriftfarbe */
+  padding: 3rem 2rem; /* Oben/unten 3rem, seitlich 2rem */
   border-radius: 1.5rem; /* Abgerundete Ecken */
-  box-shadow: 0 0 30px #0ff; /* Neon-artiger Schatten */
+  box-shadow: 0 0 30px #0ff; /* Leuchtender Neon-Schatten */
+  max-width: 600px; /* Maximal 600px breit */
+  width: 100%; /* Volle Breite bis max-width */
   text-align: center; /* Textzentrierung */
-  max-width: 600px; /* Maximale Breite */
-  width: 100%; /* Volle Breite innerhalb der Begrenzung */
-  animation: fadeIn 1.5s ease; /* Einblendeffekt */
+  animation: fadeIn 1.5s ease; /* Sanftes Einblenden */
   position: relative; /* Ermöglicht z-index */
-  z-index: 2; /* Über der Overlay-Ebene */
+  z-index: 2; /* Über dem Overlay */
+  flex: 1; /* Flexibler Platz in einem Flexcontainer */
 }
 
+/* Einblende-Animation */
 @keyframes fadeIn {
-  from { opacity: 0; transform: scale(0.95); } /* Startzustand – leicht verkleinert und transparent */
-  to { opacity: 1; transform: scale(1); } /* Endzustand – volle Sichtbarkeit */
+  from { opacity: 0; transform: scale(0.95); } /* Start: leicht verkleinert & unsichtbar */
+  to { opacity: 1; transform: scale(1); } /* Ziel: sichtbar & normal skaliert */
 }
 
+/* Überschriften-Stil */
 h1 {
-  font-size: 2.5rem; /* Große Schriftgröße */
+  font-size: 2.5rem; /* Große Schrift */
   margin-bottom: 1rem; /* Abstand nach unten */
-  color: #00ffff; /* Neonblau */
-  text-shadow: 0 0 15px #0ff; /* Leuchtender Schatten für Text */
+  color: #0ff; /* Neonblau */
+  text-shadow: 0 0 15px #0ff; /* Leuchtender Text */
 }
 
+/* Absatz-Stil */
 p {
-  font-size: 1.2rem; /* Etwas größere Standard-Schrift */
+  font-size: 1.2rem; /* Etwas größere Schrift */
   margin-bottom: 2rem; /* Abstand nach unten */
-  color: #ccc; /* Helles Grau für den Text */
+  color: #ccc; /* Helles Grau */
 }
 
+/* Formularlayout */
 .search-form {
   display: flex; /* Flexbox */
-  flex-direction: column; /* Untereinander anordnen */
-  gap: 1.5rem; /* Abstand zwischen Elementen */
+  flex-direction: column; /* Elemente untereinander */
+  gap: 1.5rem; /* Abstand zwischen Feldern */
   width: 100%; /* Volle Breite */
 }
 
+/* Auswahlfelder */
 .search-form select {
   width: 100%; /* Volle Breite */
   padding: 1.5rem; /* Innenabstand */
-  border: none; /* Kein Rand */
+  border: none; /* Kein Rahmen */
   border-radius: 0.8rem; /* Abgerundete Ecken */
-  font-size: 1.2rem; /* Schriftgröße */
+  font-size: 1.2rem; /* Lesbare Größe */
   background: #222; /* Dunkler Hintergrund */
   color: #0ff; /* Neonblauer Text */
-  box-shadow: 0 0 15px #0ff5; /* Weicher Schein */
+  box-shadow: 0 0 15px #0ff5; /* Weicher Neon-Schein */
   transition: box-shadow 0.3s ease; /* Übergang bei Fokus */
 }
 
 .search-form select:focus {
-  box-shadow: 0 0 25px #0ff; /* Stärker leuchtender Schatten bei Fokus */
+  box-shadow: 0 0 25px #0ff; /* Hellerer Schein beim Fokus */
 }
 
+/* Button-Styling */
 .search-form button {
   width: 100%; /* Volle Breite */
   padding: 1.5rem; /* Innenabstand */
   font-size: 1.3rem; /* Größere Schrift */
-  background: linear-gradient(90deg, #0ff, #00f2ff); /* Farbverlauf von Neonblau zu Türkis */
+  background: linear-gradient(90deg, #0ff, #00f2ff); /* Farbverlauf */
   color: #000; /* Schwarzer Text */
-  font-weight: bold; /* Fettschrift */
+  font-weight: bold; /* Fettgedruckt */
   border: none; /* Kein Rand */
   border-radius: 0.8rem; /* Abgerundete Ecken */
-  cursor: pointer; /* Zeigt Hand beim Hover */
-  box-shadow: 0 0 20px #00ffff; /* Leuchtender Schatten */
-  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Sanfte Übergänge bei Hover */
+  cursor: pointer; /* Handzeiger bei Hover */
+  box-shadow: 0 0 20px #00ffff; /* Leuchtender Effekt */
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Sanfte Animationen */
 }
 
 .search-form button:hover {
-  transform: scale(1.05); /* Vergrößerung beim Hover */
-  box-shadow: 0 0 30px #0ff; /* Stärkerer Leuchteffekt */
+  transform: scale(1.05); /* Leicht vergrößert beim Hover */
+  box-shadow: 0 0 30px #0ff; /* Stärkeres Leuchten */
 }
 
-.footer {
-  background: rgba(0, 0, 0, 0.85); /* Dunkler halbtransparenter Hintergrund */
-  color: #ffffff; /* Helles Grau für Text */
-  padding: 2rem; /* Innenabstand */
-  text-align: center; /* Zentrierter Text */
-  margin-top: 3rem; /* Abstand nach oben */
-  box-shadow: 0 -2px 10px #0ff3; /* Leuchtender Schatten nach oben */
+/* Wunschliste-Box */
+#wishlist {
+  position: fixed; /* Immer sichtbar */
+  top: 100px; /* Abstand vom oberen Rand */
+  right: 20px; /* Abstand vom rechten Rand */
+  background-color: rgba(0, 0, 0, 0.4); /* Halbtransparenter Hintergrund */
+  border: 2px solid #fff; /* Weißer Rahmen */
+  border-radius: 10px; /* Abgerundete Ecken */
+  padding: 20px; /* Innenabstand */
+  width: 300px; /* Feste Breite */
+  max-height: 70vh; /* Maximal 70% der Höhe */
+  overflow-y: auto; /* Scrollbar bei Bedarf */
+  color: #fff; /* Weißer Text */
 }
 
-.footer-links {
-  display: flex; /* Flexbox */
-  justify-content: center; /* Zentrierte Links */
-  gap: 2rem; /* Abstand zwischen Links */
-  margin-bottom: 1rem; /* Abstand zum unteren Teil */
+/* Wunschliste Titel */
+#wishlist h2 {
+  margin-top: 0; /* Kein Abstand oben */
+  font-size: 1.2em; /* Etwas größer */
 }
 
-.footer-links button {
-  background: none; /* Kein Hintergrund */
+/* Wunschliste Liste */
+#wishlist ul {
+  list-style: none; /* Keine Aufzählungspunkte */
+  padding: 0; /* Kein Innenabstand */
+}
+
+/* Wunschliste Elemente */
+#wishlist li {
+  margin: 5px 0; /* Abstand oben und unten */
+  display: flex; /* Flexbox für Trennung */
+  justify-content: space-between; /* Elemente links und rechts */
+  align-items: center; /* Vertikal zentrieren */
+}
+
+/* Wunschliste Button */
+#wishlist button {
+  background-color: #fff; /* Weißer Hintergrund */
+  color: #000; /* Schwarzer Text */
   border: none; /* Kein Rand */
-  color: #0ff; /* Neonblauer Text */
-  font-size: 1rem; /* Standardgröße */
-  cursor: pointer; /* Hand-Cursor */
-  padding: 0.5rem 1rem; /* Innenabstand */
-  transition: color 0.3s ease; /* Farbwechsel bei Hover */
+  padding: 3px 6px; /* Innenabstand */
+  cursor: pointer; /* Mauszeiger */
+  border-radius: 5px; /* Abgerundet */
 }
 
-.footer-links button:hover {
-  color: #ffffff; /* Weißer Text beim Hover */
-  text-shadow: 0 0 5px #0ff; /* Leuchtender Text beim Hover */
+/* Footer (unterer Bereich) */
+footer {
+  background-color: #111; /* Dunkler Hintergrund */
+  color: #ffffff; /* Weißer Text */
+  text-align: center; /* Zentriert */
+  padding: 20px; /* Innenabstand */
+  position: fixed; /* Immer unten */
+  bottom: 0; /* Am unteren Rand */
+  width: 100%; /* Volle Breite */
 }
 
-.footer-info {
-  display: none; /* Standardmäßig versteckt */
-  color: #ffffff; /* Helles Grau */
-  margin-top: 1rem; /* Abstand nach oben */
-  font-size: 0.95rem; /* Etwas kleinere Schrift */
-}
-
-.footer-info.active {
-  display: block; /* Anzeigen, wenn aktiv (z. B. per JS ein- oder ausgeblendet) */
-}
-
-.footer-info a {
-  color: #0ff; /* Neonblauer Link */
+/* Footer Links */
+footer a {
+  color: #ffffff; /* Weißer Text */
+  margin: 0 10px; /* Abstand zwischen Links */
   text-decoration: none; /* Keine Unterstreichung */
 }
 
-.footer-info a:hover {
-  text-decoration: underline; /* Unterstrichen beim Hover */
+footer a:hover {
+  text-decoration: underline; /* Unterstreichen beim Hover */
 }
-
-.footer-info p {
-  margin: 1rem 0; /* Abstand oben und unten */
-}
-
-.footer-info#home p {
-  font-size: 1.1rem; /* Etwas größere Schrift für Home-Text */
-}
-
-.footer-info#about p,
-.footer-info#contact p,
-.footer-info#impressum p {
-  font-size: 1rem; /* Einheitliche Größe für weitere Absätze */
-}
-
-#wishlist {
-  position: fixed;
-  top: 100px;
-  right: 20px;
-  background-color: rgba(255, 255, 255, 0.1);
-  border: 2px solid #fff;
-  border-radius: 10px;
-  padding: 20px;
-  width: 250px;
-  max-height: 70vh;
-  overflow-y: auto;
-  color: #fff;
-}
-
-#wishlist h2 {
-  margin-top: 0;
-  font-size: 1.2em;
-}
-
-#wishlist ul {
-  list-style: none;
-  padding: 0;
-}
-
-#wishlist li {
-  margin: 5px 0;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-#wishlist button {
-  background-color: rgb(255, 255, 255);
-  color: white;
-  border: none;
-  padding: 3px 6px;
-  cursor: pointer;
-  border-radius: 5px;
+.cont {
+  background-color: rgba(0, 0, 0, 0.6); /* Dunkler halbtransparenter Hintergrund */
+  color: #fff; /* Weißer Text */
+  padding: 2rem;
+  margin: 3rem auto;
+  max-width: 800px;
+  border-radius: 1rem;
+  box-shadow: 0 0 20px #0ff;
 }
