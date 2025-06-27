@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" /> <!-- Definiert die Zeichencodierung als UTF-8 -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/> <!-- Stellt sicher, dass die Seite für Mobilgeräte optimiert ist -->
+  <title>🎮 Videogame Finder 🎮</title> <!-- Setzt den Titel der Seite -->
+  <link rel="stylesheet" href="styles.css"/> <!-- Verlinkt die externe CSS-Datei für das Styling der Seite -->
+  <script src="spielfinden.js" defer></script>
+</head>
+<body>
+
+  <div class="overlay">
+    <div class="container-wrapper">   <!-- Container für den gesamten Inhalt -->
+    <!-- Hauptbereich -->
+    <div class="container"> <!-- Container für den Hauptinhalt -->
+      <h1>🎮 Videogame Finder 🎮</h1> <!-- Überschrift der Seite -->
+      <p>Finde das perfekte Spiel für dich</p> <!-- Beschreibungstext -->
+      
+      <form class="search-form" action="#" method="GET"> <!-- Formular für die Spiele-Suche -->
+        <!-- Genre Auswahl -->
+        <select id="genre" name="genre" required> <!-- Dropdown für die Genre-Auswahl -->
+          <option value="">Genre wählen</option> <!-- Standardoption -->
+          <option value="action">Action</option> <!-- Option für Action-Genre -->
+          <option value="adventure">Adventure</option> <!-- Option für Adventure-Genre -->
+          <option value="shooter">Shooter</option> <!-- Option für Shooter-Genre -->
+          <option value="simulation">Simulation</option> <!-- Option für Simulation-Genre -->
+          <option value="strategy">Strategie</option> <!-- Option für Strategie-Genre -->
+          <option value="sports">Sport</option> <!-- Option für Sport-Genre -->
+        </select>
+
+        <!-- Spielmodus Auswahl -->
+        <select id="mode" name="mode" required> <!-- Dropdown für die Spielmodus-Auswahl -->
+          <option value="">Spielmodus wählen</option> <!-- Standardoption -->
+          <option value="singleplayer">Einzelspieler</option> <!-- Option für Einzelspieler-Modus -->
+          <option value="multiplayer">Mehrspieler</option> <!-- Option für Mehrspieler-Modus -->
+        </select>
+
+        <!-- Plattform Auswahl -->
+        <select id="platform" name="platform" required> <!-- Dropdown für die Plattform-Auswahl -->
+          <option value="">Plattform wählen</option> <!-- Standardoption -->
+          <option value="pc">PC</option> <!-- Option für PC -->
+          <option value="ps5">PlayStation 5</option> <!-- Option für PlayStation 5 -->
+          <option value="xbox">Xbox</option> <!-- Option für Xbox -->
+        </select>
+
+        <button type="submit">🎮 Spiel finden</button> <!-- Button zum Absenden des Formulars -->
+      </form>
+
+      <!-- Empfehlung -->
+      <div id="recommendation" style="margin-top: 20px;"></div> <!-- Bereich für die Spiel-Empfehlung -->
+    </div>
+
+    <!-- Merkliste -->
+    <div id="wishlist"> <!-- Container für die Merkliste -->
+      <h2>📝 Deine Merkliste</h2> <!-- Titel der Merkliste -->
+      <ul id="wishlistItems"></ul> <!-- Liste der hinzugefügten Spiele -->
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <a href="spielfinden.html">Home</a> <!-- Link zur Startseite -->
+    <a href="ueber-uns.html">Über uns</a> <!-- Link zur "Über uns"-Seite -->
+    <a href="kontakt.html">Kontakt</a> <!-- Link zur Kontaktseite -->
+    <a href="impressum.html">Impressum</a> <!-- Link zur Impressum-Seite -->
+  </footer>
+</div> <!-- overlay schließen -->
+</body>
+</html>
+
+  
